@@ -1,12 +1,8 @@
 package multithreadingPackage;
-
 import java.util.concurrent.TimeUnit;
-
 class Summation1 implements Runnable{
-
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		summation();
 	}
 	public void summation(){
@@ -18,14 +14,11 @@ class Summation1 implements Runnable{
 		}
 		System.out.println("Sum1 is : "+ a);
 	}
-	
 }
 
 class Summation2 implements Runnable{
-
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		summation();
 	}
 	public void summation(){
@@ -37,15 +30,10 @@ class Summation2 implements Runnable{
 		}
 		System.out.println("Sum2 is : "+ a);
 	}
-	
 }
-	
 
-
-public class ThreadDemo{
-	
+public class ThreadDemo{	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		long startTime = System.currentTimeMillis();
 		Summation1 sum1 = new Summation1();
 		sum1.summation();
@@ -60,6 +48,9 @@ public class ThreadDemo{
 		Thread t2 = new Thread(new Summation2());
 		t1.run();
 		t2.run();
+		while(t1.isAlive()||t2.isAlive()) {
+			
+		}
 		endTime = System.currentTimeMillis();
 		timeElapsed = endTime - startTime;
 		System.out.println("Execution time in milliseconds: " + timeElapsed);
