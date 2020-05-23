@@ -1,5 +1,4 @@
 package multithreadingPackage;
-import java.util.concurrent.TimeUnit;
 class Summation1 implements Runnable{
 	@Override
 	public void run() {
@@ -41,7 +40,7 @@ public class ThreadDemo{
 		sum2.summation();
 		long endTime = System.currentTimeMillis();
 		long timeElapsed = endTime - startTime;
-		System.out.println("Execution time in milliseconds: " + timeElapsed);
+		System.out.println("Execution time without multithreading: " + timeElapsed + " milliseconds");
 		
 		startTime = System.currentTimeMillis();
 		Thread t1 = new Thread(new Summation1());
@@ -53,6 +52,6 @@ public class ThreadDemo{
 		}
 		endTime = System.currentTimeMillis();
 		timeElapsed = endTime - startTime;
-		System.out.println("Execution time in milliseconds: " + timeElapsed);
+		System.out.println("Execution time with multithreading: " + timeElapsed + " milliseconds");
 	}
 }
