@@ -17,9 +17,22 @@ public class Person implements Runnable {
 		String threadName = Thread.currentThread().getName();
 		System.out.println("-------------------------------");
 		System.out.println(threadName + " holds lock?- " + Thread.currentThread().holdsLock(this));
-//		if(threadName.equals("FirstThread")) {
-//			Thread.currentThread().yield();
-//		}
+		
+		//For trying yield
+		
+		/*if(threadName.equals("FirstThread")) {
+			Thread.currentThread().yield();
+		}*/
+		
+		//For trying sleep
+		
+		/*if(threadName.equals("FirstThread")) {
+			try {
+				Thread.currentThread().sleep(2000);			
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}*/
 		System.out.println(threadName + " Name - " + this.name);
 		System.out.println(threadName + " Job - " + this.job);
 		System.out.println(threadName + " Address - " + this.address);
