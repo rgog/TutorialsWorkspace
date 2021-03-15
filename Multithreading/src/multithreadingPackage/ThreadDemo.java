@@ -45,8 +45,8 @@ public class ThreadDemo{
 		startTime = System.currentTimeMillis();
 		Thread t1 = new Thread(new Summation1());
 		Thread t2 = new Thread(new Summation2());
-		t1.run();
-		t2.run();
+		t1.start();
+		t2.start();
 		while(t1.isAlive()||t2.isAlive()) {
 			
 		}
